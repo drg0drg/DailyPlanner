@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>DAILY PLANNER</title>
 		<link rel="stylesheet" href="style.css"/>
     </head>
@@ -12,7 +12,7 @@
 
         <nav id="navbar" class="navbar-dsk navbar-tab navbar-mob">
             <h1>Daily Planner</h1>
-            <h3> current date  current hour</h3>
+            <div id="moment-date"></div>
         </nav> 
 
         <form id="day-plan-form" class="day-plan-form-dsk day-plan-form-tab day-plan-form-mob">
@@ -27,5 +27,11 @@
 
 
 
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
     </body>
 </html>
