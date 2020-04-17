@@ -15,6 +15,7 @@
 
 
 
+
 var dayPlanForm = document.getElementById("day-plan-form")
 var plannerContainerEl = document.getElementById("planner-container")
 
@@ -33,18 +34,22 @@ nowMomentShown.innerHTML = nowMoment.format('DD-MMM-YYYY kk:mm');
 //The following is needed for the coloring loop, depending on hour
 //<currentHour> takes the hour only from the moment library. It outputs a string
 currentHour = moment().format("kk");
-console.log(currentHour);
+console.log("current time (hour only) is  " + currentHour);
+
+
 
 
 
 
 // Dynamically building the rows in a for loop with JS
-for (let h=16; h<=22; h++){
+for (let h=16; h<=24; h++){
 
     //Creating the row container
     const divRow = document.createElement("div");
     divRow.setAttribute("class", "div-row-dsk div-row-tab div-row-mob");
     plannerContainerEl.appendChild(divRow);
+
+
 
 
     //Inside the row container, create the hour container
@@ -53,10 +58,17 @@ for (let h=16; h<=22; h++){
     divHour.textContent = h;
     divRow.appendChild(divHour);
 
+
+
+
     //Inside the row container, create the input
     const divInput = document.createElement("input");
     divInput.setAttribute("class", "div-input div-input-dsk div-input-tab div-input-mob");
     divRow.appendChild(divInput);
+    //---------------------------
+    // var task = localStorage.getItem('item' + h);
+
+
 
     //Inside the row container, create the save button
     const btnSave = document.createElement("button");
@@ -66,11 +78,12 @@ for (let h=16; h<=22; h++){
 
 
 
+
     //color coding function of hour
     if (currentHour > h) {
         divInput.style.backgroundColor = "rgb(240, 150, 150)";
-        console.log(typeof(currentHour));
-        console.log(typeof(h));
+        // console.log(typeof(currentHour));
+        // console.log(typeof(h));
     } else if (currentHour < h){
         divInput.style.backgroundColor = "rgb(158, 245, 158)";
     }else {
@@ -79,11 +92,38 @@ for (let h=16; h<=22; h++){
 
 
 
+
+
+    dayPlanForm.addEventListener("submit", function(e){
+        e.preventDefault();
+
+    })
+
+
     
     
     //Event Listener for save button
-    btnSave.addEventListener("click", function(){
+    btnSave.addEventListener("click", function(e){
+        e.preventDefault();
         var userInput = divInput.value;
-        localStorage.setItem(userInput);
+        localStorage.setItem("items", (userInput));
     })
-}
+
+    // localStorage.getItem(("items"));
+
+
+
+
+    // function renderStored(){
+    // }
+
+
+
+}//end of for loop
+
+
+
+
+
+
+
