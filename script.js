@@ -14,22 +14,37 @@
 
 
 
+
 var dayPlanForm = document.getElementById("day-plan-form")
+var plannerContainerEl = document.getElementById("planner-container")
 
 
 //Showing the date and time using Moment.js
 var nowMoment = moment();
-var nowMomentShown = document.getElementById("moment-date");
+//in JS:
+// var nowMomentShown = document.getElementById("moment-date");
+
+//in jQuery:
+var nowMomentShown = $("#moment-date")[0];
 nowMomentShown.innerHTML = nowMoment.format('DD-MMM-YYYY kk:mm');
 
 
+
+//The following is needed for the coloring loop, depending on hour
+//<currentHour> takes the hour only from the moment library. It outputs a string
+currentHour = moment().format("kk");
+console.log(currentHour);
+
+
+
+
 // Dynamically building the rows in a for loop with JS
-for (let h=9; h<=17; h++){
+for (let h=16; h<=22; h++){
 
     //Creating the row container
     const divRow = document.createElement("div");
     divRow.setAttribute("class", "div-row-dsk div-row-tab div-row-mob");
-    dayPlanForm.appendChild(divRow);
+    plannerContainerEl.appendChild(divRow);
 
 
     //Inside the row container, create the hour container
@@ -40,7 +55,7 @@ for (let h=9; h<=17; h++){
 
     //Inside the row container, create the input
     const divInput = document.createElement("input");
-    divInput.setAttribute("class", "div-input-dsk div-input-tab div-input-mob");
+    divInput.setAttribute("class", "div-input div-input-dsk div-input-tab div-input-mob");
     divRow.appendChild(divInput);
 
     //Inside the row container, create the save button
@@ -48,4 +63,27 @@ for (let h=9; h<=17; h++){
     btnSave.textContent = "SAVE";
     btnSave.setAttribute("class", "save-btn-dsk save-btn-tab save-btn-mob");
     divRow.appendChild(btnSave);
+
+
+
+    //color coding function of hour
+    if (currentHour > h) {
+        divInput.style.backgroundColor = "rgb(240, 150, 150)";
+        console.log(typeof(currentHour));
+        console.log(typeof(h));
+    } else if (currentHour < h){
+        divInput.style.backgroundColor = "rgb(158, 245, 158)";
+    }else {
+        divInput.style.backgroundColor = "rgb(173, 173, 173)";
+    }
+
+
+
+    
+    
+    //Event Listener for save button
+    btnSave.addEventListener("click", function(){
+        var userInput = divInput.value;
+        localStorage.setItem(userInput);
+    })
 }

@@ -18,6 +18,23 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+
+}
+
+
+#container{
+    height: 100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 3px solid orange */
+    background-color: rgb(209, 190, 221);
 }
 
 
@@ -25,6 +42,28 @@ body{
 #day-plan-form{
     border: 1px solid green;
     height: 80%;
+    width: 80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin: 0 auto; */
+}
+
+.div-row-dsk{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    border: 1px solid black;
+
+}
+
+
+#planner-container{
+    width: 100%;
+    border: 3px solid turquoise;
 }
 
 
