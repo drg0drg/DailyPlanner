@@ -16,6 +16,7 @@
 
 
 
+
 var dayPlanForm = document.getElementById("day-plan-form")
 var plannerContainerEl = document.getElementById("planner-container")
 
@@ -81,13 +82,13 @@ for (let h=16; h<=24; h++){
 
     //color coding function of hour
     if (currentHour > h) {
-        divInput.style.backgroundColor = "rgb(240, 150, 150)";
+        divInput.style.backgroundColor = "rgb(240, 150, 150, 0.700)";
         // console.log(typeof(currentHour));
         // console.log(typeof(h));
     } else if (currentHour < h){
-        divInput.style.backgroundColor = "rgb(158, 245, 158)";
+        divInput.style.backgroundColor = "rgb(158, 245, 158, 0.700)";
     }else {
-        divInput.style.backgroundColor = "rgb(173, 173, 173)";
+        divInput.style.backgroundColor = "rgb(173, 173, 173, 0.700)";
     }
 
 
@@ -120,6 +121,13 @@ for (let h=16; h<=24; h++){
 
 
 }//end of for loop
+
+
+
+
+
+
+
 
 
 
