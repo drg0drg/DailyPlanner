@@ -12,17 +12,6 @@
 //Inside the Listener, use local storage to save user's input
 
 
-
-
-
-
-
-
-
-
-
-
-
 // ----------------- Variables------------------
 //----------------------------------------------
 var dayPlanForm = document.getElementById("day-plan-form");
@@ -42,9 +31,6 @@ var storedInput;
 
 storedInput = JSON.parse(localStorage.getItem("storedInput"));
 
-
-
-
 //----------------MomentJS----------------------
 //----------------------------------------------
 
@@ -63,102 +49,71 @@ nowMomentShown.innerHTML = nowMoment.format('DD-MMM-YYYY kk:mm');
 
 // Dynamically building the rows in a <for loop> with JS
 function loadSomething(){
-for (let h=9; h<=17; h++){
+    for (let h=9; h<=17; h++){
 
-    inputArrayIndex = h-9; 
+        inputArrayIndex = h - 9; 
+        
+        //Creating the row container
+        const row = document.createElement("div");
+        row.setAttribute("class", "div-row-dsk div-row-tab div-row-mob");
+        row.setAttribute("h-Index", h);
+        plannerContainerEl.appendChild(row);
 
+        //Inside the row container, create the hour container
+        const hour = document.createElement("div");
+        hour.setAttribute("class", "div-hour-dsk div-hour-tab div-hour-mob");
+        hour.textContent = h;
+        row.appendChild(hour);
+        
+        //Inside the row container, create the input
+        const input = document.createElement("input");
+        input.setAttribute("class", "div-input div-input-dsk div-input-tab div-input-mob");
+        // divInput.setAttribute("")
+        var task = localStorage.getItem(h);
+        input.value = task;
+        row.appendChild(input);
+        //---------------------------
 
+        //Inside the row container, create the save button
+        const btnSave = document.createElement("button");
+        btnSave.textContent = "SAVE";
+        btnSave.setAttribute("class", "save-btn-dsk save-btn-tab save-btn-mob");
+        btnSave.setAttribute("id", "btn-save");
+        row.appendChild(btnSave);
 
-    //Creating the row container
-    const divRow = document.createElement("div");
-    divRow.setAttribute("class", "div-row-dsk div-row-tab div-row-mob");
-    divRow.setAttribute("h-Index", h);
-    plannerContainerEl.appendChild(divRow);
+        rowColorCode(input, h);
 
+        if (task !== null) {
+            // inputArray[inputArrayIndex] = storedInput[inputArrayIndex];
+            // console.log(storedInput)//doesn't log anything
+            // console.log(inputArray) //doesn't log anything
+            input.textContent = task;
+        
+        } else {
+            inputArray = new Array(9);
+        }
 
+        dayPlanForm.addEventListener("submit", function(e){
+            e.preventDefault();
 
+        })
 
-    //Inside the row container, create the hour container
-    const divHour = document.createElement("div");
-    divHour.setAttribute("class", "div-hour-dsk div-hour-tab div-hour-mob");
-    divHour.textContent = h;
-    divRow.appendChild(divHour);
-    
-    
-    
-    
-    //Inside the row container, create the input
-    const divInput = document.createElement("input");
-    divInput.setAttribute("class", "div-input div-input-dsk div-input-tab div-input-mob");
-    // divInput.setAttribute("")
-    var task = localStorage.getItem(h);
-    divInput.textContent = task;
-    divRow.appendChild(divInput);
-    console.log(task);
-    //---------------------------
-    
+        btnSave.addEventListener("click", function(e){
+            e.preventDefault();
+            var userInput = input.value;
+            localStorage.setItem(h, (userInput));
+        
+            // storedInput = inputArray[inputArrayIndex];
+            // inputArray[inputArrayIndex]=localStorage.getItem(h, (userInput));
+            // loadSomething();
+        })
 
-
-
-    //Inside the row container, create the save button
-    const btnSave = document.createElement("button");
-    btnSave.textContent = "SAVE";
-    btnSave.setAttribute("class", "save-btn-dsk save-btn-tab save-btn-mob");
-    btnSave.setAttribute("id", "btn-save");
-    divRow.appendChild(btnSave);
-
-
-
-    rowColorCode (divInput, h);
-
-
-
-
-    if (task !== null) {
-        // inputArray[inputArrayIndex] = storedInput[inputArrayIndex];
-        // console.log(storedInput)//doesn't log anything
-        // console.log(inputArray) //doesn't log anything
-        divInput.textContent = task;
-    
-      } else {
-        inputArray = new Array(9);
-      }
-
-
-
-
-
-    dayPlanForm.addEventListener("submit", function(e){
-        e.preventDefault();
-
-    })
-
-
-
-
-    btnSave.addEventListener("click", function(e){
-        e.preventDefault();
-        var userInput = divInput.value;
-        localStorage.setItem(h, (userInput));
-    
-        // storedInput = inputArray[inputArrayIndex];
-        // inputArray[inputArrayIndex]=localStorage.getItem(h, (userInput));
-        loadSomething();
-    })
-
-}//end of for loop
+    }//end of for loop
 }//end of loadSomething function
 
 
 
 loadSomething();
-
-
-
-
-
-
-
 
 function rowColorCode (divInput, h) {
     if (currentHour > h) {
@@ -172,41 +127,3 @@ function rowColorCode (divInput, h) {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
