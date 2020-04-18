@@ -20,28 +20,27 @@
 
 
 
+
+
+
 // ----------------- Variables------------------
 //----------------------------------------------
 var dayPlanForm = document.getElementById("day-plan-form");
 var plannerContainerEl = document.getElementById("planner-container");
+var btnSaveEl = document.querySelector("button");
+
 
 //The following is needed for the coloring loop, depending on hour
 //<currentHour> takes the hour only from the moment library. It outputs a string
 currentHour = moment().format("kk");
 console.log("current time (hour only) is  " + currentHour);
-inputArray = [];
+var inputArray = [];
+var inputArrayIndex;
+var storedInput;
 
 
 
-let storedInput = JSON.parse(localStorage.getItem("storedInput"));
-
-
-if (storedInput !== null) {
-    inputArray = storedInput;
-  } else {
-    inputArray = new Array(9);
-  }
-
+storedInput = JSON.parse(localStorage.getItem("storedInput"));
 
 
 
@@ -62,14 +61,13 @@ nowMomentShown.innerHTML = nowMoment.format('DD-MMM-YYYY kk:mm');
 
 
 
-
-
-
-
 // Dynamically building the rows in a <for loop> with JS
-for (let h=16; h<=24; h++){
+function loadSomething(){
+for (let h=9; h<=17; h++){
 
-    let inputArrayIndex = h-16; 
+    inputArrayIndex = h-9; 
+
+
 
     //Creating the row container
     const divRow = document.createElement("div");
@@ -85,16 +83,20 @@ for (let h=16; h<=24; h++){
     divHour.setAttribute("class", "div-hour-dsk div-hour-tab div-hour-mob");
     divHour.textContent = h;
     divRow.appendChild(divHour);
-
-
-
-
+    
+    
+    
+    
     //Inside the row container, create the input
     const divInput = document.createElement("input");
     divInput.setAttribute("class", "div-input div-input-dsk div-input-tab div-input-mob");
+    // divInput.setAttribute("")
+    var task = localStorage.getItem(h);
+    divInput.textContent = task;
     divRow.appendChild(divInput);
+    console.log(task);
     //---------------------------
-    // var task = localStorage.getItem('item' + h);
+    
 
 
 
@@ -102,6 +104,7 @@ for (let h=16; h<=24; h++){
     const btnSave = document.createElement("button");
     btnSave.textContent = "SAVE";
     btnSave.setAttribute("class", "save-btn-dsk save-btn-tab save-btn-mob");
+    btnSave.setAttribute("id", "btn-save");
     divRow.appendChild(btnSave);
 
 
@@ -110,23 +113,17 @@ for (let h=16; h<=24; h++){
 
 
 
-    //color coding function of hour
-    // if (currentHour > h) {
-    //     divInput.style.backgroundColor = "rgb(240, 150, 150, 0.700)";
-    //     // console.log(typeof(currentHour));
-    //     // console.log(typeof(h));
-    // } else if (currentHour < h){
-    //     divInput.style.backgroundColor = "rgb(158, 245, 158, 0.700)";
-    // } else {
-    //     divInput.style.backgroundColor = "rgb(173, 173, 173, 0.700)";
-    // }
 
+    if (task !== null) {
+        // inputArray[inputArrayIndex] = storedInput[inputArrayIndex];
+        // console.log(storedInput)//doesn't log anything
+        // console.log(inputArray) //doesn't log anything
+        divInput.textContent = task;
+    
+      } else {
+        inputArray = new Array(9);
+      }
 
-    // var hour = inputArray[h];
-    // console.log(inputArray[18]);
-    // var task = localStorage.getItem("item" + hour);
-    // inputArray[h] = task.value;
-    // console.log(inputArray[18]);
 
 
 
@@ -137,30 +134,29 @@ for (let h=16; h<=24; h++){
     })
 
 
-    
-    
-    //Event Listener for save button
+
+
     btnSave.addEventListener("click", function(e){
         e.preventDefault();
         var userInput = divInput.value;
         localStorage.setItem(h, (userInput));
-        inputArray[inputArrayIndex]=localStorage.setItem(h, (userInput));
+    
+        // storedInput = inputArray[inputArrayIndex];
+        // inputArray[inputArrayIndex]=localStorage.getItem(h, (userInput));
+        loadSomething();
     })
 
-    // localStorage.getItem(("items"));
-
-
-
-
-
-
-
-    // function renderStored(){
-    // }
-
-
-
 }//end of for loop
+}//end of loadSomething function
+
+
+
+loadSomething();
+
+
+
+
+
 
 
 
@@ -176,6 +172,25 @@ function rowColorCode (divInput, h) {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
