@@ -59,7 +59,7 @@ function loadPlanner(){
         //Inside the row container, create the hour container
         const hour = document.createElement("div");
         hour.setAttribute("class", "div-hour-dsk div-hour-tab div-hour-mob");
-        hour.textContent = h;
+        hour.textContent = h + ":00";
         row.appendChild(hour);
         
         //Inside the row container, create the input
