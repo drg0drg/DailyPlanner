@@ -25,6 +25,9 @@ body{
 @media screen and (max-width: 767px) {
 
     #navbar {
+        -webkit-box-shadow: inset 0px 0px 25px 7px rgba(0,0,0,0.55);
+        -moz-box-shadow: inset 0px 0px 25px 7px rgba(0,0,0,0.55);
+        box-shadow: inset 0px 0px 25px 7px rgba(0,0,0,0.55);        
         background-color: rgb(173, 173, 173);
         display:flex;
         justify-content: center;
@@ -76,7 +79,7 @@ body{
     }
     
     
-    #planner-container{
+    #planner-container {
         width: 100%;
         /* border: 3px solid turquoise; */
     }
@@ -105,6 +108,9 @@ body{
         color: rgb(85, 84, 84);
         background-color: rgba(173, 173, 173, 0.700);
         margin-right: 0.4vh;
+        -webkit-box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+        box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
     }
     
     
@@ -113,20 +119,12 @@ body{
         width:80%;
         height: 8vh;
         border: none;
-        font-size: 10px;
+        font-size: 8px;
         font-weight: 900;
         padding: 0 0.5em;
-        /* display: inline-block; */
-        /* overflow-wrap: break-word;
-        word-wrap: break-word; */
-        display: inline-block;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        word-break: normal;
-        line-break: strict;
-        hyphens: none;
-        -webkit-hyphens: none;
-        -moz-hyphens: none;
+        -webkit-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.4);
+        box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.4);    
     }
     
     
@@ -144,7 +142,9 @@ body{
         color: rgb(85, 84, 84);
         background-color: rgb(173, 173, 173, 0.700);
         margin-left: 0.4vh;
-    
+        -webkit-box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+        box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
     }
     
     
@@ -162,6 +162,9 @@ body{
         height: 5%;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 6px;
+        -webkit-box-shadow: inset 0px 0px 12px 4px rgba(0,0,0,0.55);
+        -moz-box-shadow: inset 0px 0px 12px 4px rgba(0,0,0,0.55);
+        box-shadow: inset 0px 0px 12px 4px rgba(0,0,0,0.55);
     }
 
 }
@@ -182,7 +185,7 @@ body{
 
 @media screen and (min-width: 768px) {
 
-    #navbar{
+    #navbar {
         background-color: rgb(173, 173, 173);
         display:flex;
         justify-content: center;
@@ -193,12 +196,15 @@ body{
         right: 0;
         top: 0;
         left: 0;
+        -webkit-box-shadow: inset 0px 0px 25px 7px rgba(0,0,0,0.55);
+        -moz-box-shadow: inset 0px 0px 25px 7px rgba(0,0,0,0.55);
+        box-shadow: inset 0px 0px 25px 7px rgba(0,0,0,0.55);        
     }
 
 
     #nav-bar-title {
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 50px;
+        font-size: 40px;
         font-weight: 900;
     }
 
@@ -209,7 +215,7 @@ body{
     }
     
     
-    #container{
+    #container {
         height: 100%;
         width: 100%;
         display:flex;
@@ -222,7 +228,7 @@ body{
     
     
     
-    #day-plan-form{
+    #day-plan-form {
         height: 80%;
         width: 80%;
         display:flex;
@@ -234,7 +240,7 @@ body{
     }
     
     
-    #planner-container{
+    #planner-container {
         width: 100%;
         /* border: 3px solid turquoise; */
     }
@@ -242,7 +248,7 @@ body{
     
     
     
-    .div-row-dsk {
+    .div-row-tab {
         width: 100%;
         display:flex;
         justify-content: center;
@@ -251,7 +257,7 @@ body{
     }
     
     
-    .div-hour-dsk {
+    .div-hour-tab {
         width: 10%;
         height: 8vh;
         display:flex;
@@ -263,23 +269,30 @@ body{
         color: rgb(85, 84, 84);
         background-color: rgba(173, 173, 173, 0.700);
         margin-right: 0.4vh;
+        -webkit-box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+        box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+
     }
     
     
     
-    .div-input{
+    .div-input-tab {
         width:80%;
         height: 8vh;
         border: none;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 900;
         padding: 0 0.5em;
+        -webkit-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.4);
+        box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.4);    
     }
     
     
     
     
-    .save-btn-dsk{
+    .save-btn-tab {
         width: 10%;
         height: 8vh;
         display:flex;
@@ -291,13 +304,15 @@ body{
         color: rgb(85, 84, 84);
         background-color: rgb(173, 173, 173, 0.700);
         margin-left: 0.4vh;
-    
+        -webkit-box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
+        box-shadow: inset 0px 0px 12px 3px rgba(0,0,0,0.4);
     }
     
     
     
     
-    #footer{
+    #footer {
         display:flex;
         justify-content: center;
         align-items: center;
@@ -308,7 +323,9 @@ body{
         left: 0;
         height: 5%;
         font-size: 10px;
-
+        -webkit-box-shadow: inset 0px 0px 20px 4px rgba(0,0,0,0.55);
+        -moz-box-shadow: inset 0px 0px 20px 4px rgba(0,0,0,0.55);
+        box-shadow: inset 0px 0px 20px 4px rgba(0,0,0,0.55);
     }
 
 }
@@ -325,7 +342,7 @@ body{
 
 @media screen and (min-width: 1025px) {
 
-    #navbar{
+    #navbar {
         background-color: rgb(173, 173, 173);
         display:flex;
         justify-content: center;
@@ -336,6 +353,9 @@ body{
         right: 0;
         top: 0;
         left: 0;
+        -webkit-box-shadow: inset 0px 0px 40px 7px rgba(0,0,0,0.79);
+        -moz-box-shadow: inset 0px 0px 40px 7px rgba(0,0,0,0.79);
+        box-shadow: inset 0px 0px 40px 7px rgba(0,0,0,0.79);
     }
 
 
@@ -352,7 +372,7 @@ body{
     }
     
     
-    #container{
+    #container {
         height: 100%;
         width: 100%;
         display:flex;
@@ -365,7 +385,7 @@ body{
     
     
     
-    #day-plan-form{
+    #day-plan-form {
         height: 80%;
         width: 80%;
         display:flex;
@@ -377,7 +397,7 @@ body{
     }
     
     
-    #planner-container{
+    #planner-container {
         width: 100%;
         /* border: 3px solid turquoise; */
     }
@@ -406,23 +426,29 @@ body{
         color: rgb(85, 84, 84);
         background-color: rgba(173, 173, 173, 0.700);
         margin-right: 0.4vh;
+        -webkit-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
+        box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
     }
     
     
     
-    .div-input{
+    .div-input {
         width:80%;
         height: 8vh;
         border: none;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 900;
         padding: 0 0.5em;
+        -webkit-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
+        box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
     }
     
     
     
     
-    .save-btn-dsk{
+    .save-btn-dsk {
         width: 10%;
         height: 8vh;
         display:flex;
@@ -434,13 +460,15 @@ body{
         color: rgb(85, 84, 84);
         background-color: rgb(173, 173, 173, 0.700);
         margin-left: 0.4vh;
-    
+        -webkit-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
+        -moz-box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
+        box-shadow: inset 0px 0px 30px 8px rgba(0,0,0,0.6);
     }
     
     
     
     
-    #footer{
+    #footer {
         display:flex;
         justify-content: center;
         align-items: center;
@@ -451,7 +479,9 @@ body{
         left: 0;
         height: 5%;
         font-size: 10px;
-
+        -webkit-box-shadow: inset 0px 0px 20px 4px rgba(0,0,0,0.79);
+        -moz-box-shadow: inset 0px 0px 20px 4px rgba(0,0,0,0.79);
+        box-shadow: inset 0px 0px 20px 4px rgba(0,0,0,0.79);
     }
     
 }
